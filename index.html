@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Startup Idea Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-rocket"></i>
+            <span>AI Startup Generator</span>
+        </div>
+        <div class="nav-actions">
+            <button id="exportBtn" class="nav-btn"><i class="fas fa-download"></i> Export</button>
+            <button id="clearBtn" class="nav-btn"><i class="fas fa-trash"></i> Clear</button>
+            <button id="themeBtn" class="nav-btn"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1>🎆 AI-Powered Startup Ideas</h1>
+            <p>Generate innovative startup concepts using advanced AI and real-world data</p>
+        </header>
+        
+        <div class="control-panel">
+            <div class="filters">
+                <div class="filter-group">
+                    <label><i class="fas fa-tags"></i> Category:</label>
+                    <select id="categorySelect">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-search"></i> Search:</label>
+                    <input type="text" id="searchInput" placeholder="Search ideas...">
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-dollar-sign"></i> Revenue Range:</label>
+                    <div class="range-inputs">
+                        <input type="number" id="minRevenue" placeholder="Min" min="0">
+                        <span>to</span>
+                        <input type="number" id="maxRevenue" placeholder="Max" min="0">
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-sort"></i> Sort by:</label>
+                    <select id="sortOrder">
+                        <option value="random">Random</option>
+                        <option value="revenue-high">Revenue (High to Low)</option>
+                        <option value="revenue-low">Revenue (Low to High)</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="generateBtn" class="generate-btn">
+                    <i class="fas fa-magic"></i>
+                    <span>Generate 3 AI Ideas</span>
+                </button>
+                <button id="favoriteBtn" class="action-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorites (<span id="favoriteCount">0</span>)</span>
+                </button>
+            </div>
+        </div>
+
+
+        
+        <div class="ideas-container" id="ideasContainer"></div>
+        
+        <div class="stats-panel">
+            <div class="stat-item">
+                <i class="fas fa-lightbulb"></i>
+                <span>Ideas Generated: <span id="counter">0</span></span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Avg Revenue: $<span id="avgRevenue">0</span></span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span>Top Category: <span id="topCategory">None</span></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
